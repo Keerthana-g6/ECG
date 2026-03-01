@@ -1,0 +1,29 @@
+# ECG-AI-System
+
+
+## Requirements
+- Python 3.9+
+- Node 16+
+- Arduino IDE + ESP32 board support
+
+
+## Setup Backend
+1. cd backend
+2. python -m venv venv
+3. source venv/bin/activate # Windows: venv\Scripts\activate
+4. pip install -r requirements.txt # include flask, tensorflow, scipy, wfdb, twilio, flask-cors
+5. place trained model at backend/model/ecg_model.h5
+6. export TWILIO_SID=... TWILIO_AUTH=... ALERT_TO='whatsapp:+91...' (optional)
+7. python server.py
+
+
+## Setup Frontend
+1. cd frontend
+2. npm install
+3. npm start
+
+
+## ESP32
+- flash esp32/ecg_stream.ino to ESP32
+- power with power bank
+- open frontend and proof-of-concept
